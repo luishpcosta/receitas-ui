@@ -1,6 +1,6 @@
 # receitas-ui
 
-Design de Interface do Usuário da API de Receitas
+Design de Interface do Usuário de Receitas
 
 ## Requisitos
 
