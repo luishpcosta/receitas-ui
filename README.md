@@ -18,6 +18,7 @@ Para executar o aplicativo, você precisa:
 ### Instale os pacotes npm descritos no package.json
 
 `npm install`
+
 `npm start`
 
 ### acesse:
