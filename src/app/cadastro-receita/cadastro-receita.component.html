@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <h1>Cadastrar Receita</h1>
+    </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+        <div *ngIf="receitaForm.invalid && receitaForm.dirty" class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Preencha todos os campos corretamente
+      </div>
+      <br/>
+      <form #receitaForm="ngForm" (ngSubmit)="salvar(receitaForm)">
+        <div class="ui-g">
+          <div class="ui-g-4 ui-fluid">
+              <label>Nome da Receita: </label>
+              <input  type="text" name="nome" pInputText [(ngModel)]="receita.nome" required #nome="ngModel">
+              <div *ngIf="nome.hasError('required') && nome.touched" class="error">Informe um nome</div>
+          </div>
+          <div class="ui-g-2">
+              <label>Nº de Porções: </label>
+              <input type="number" name="porcoes" pInputText [(ngModel)]="receita.porcoes" required  #porcoes="ngModel">
+              <div *ngIf="porcoes.hasError('required') && porcoes.touched"  class="error">Informe o Nº de porções</div>
+          </div>
+          <div class="ui-g-2">
+              <label>Quantas calorias: </label>
+              <input type="number" name="calorias" pInputText [(ngModel)]="receita.calorias" required #calorias="ngModel">
+              <div *ngIf="calorias.hasError('required') && calorias.touched" class="error">Informe quantas calorias</div>
+          </div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-2">
+            <label>Ingredientes: </label>
+            <select  name="ingredientes" multiple [(ngModel)]="receita.ingredientes"  required #item="ngModel">
+              <option *ngFor="let i of ingredientes" [value]="i" style="font-family: Arial">
+                {{ i.nome }}</option>
+            </select>
+            <div *ngIf="item.hasError('required') && item.touched" class="error">Informe os Ingredientes</div>
+          </div>
+          <div class="ui-g-4">
+                <label>Quantas calorias: </label>
+                <textarea rows="4" cols="50"  name="modoDePreparo"  [(ngModel)]="receita.modoDePreparo" pInputText ngModel></textarea>
+          </div>
+        </div>
+        <div class="ui-g">
+            <div class="ui-g-4">
+              <button pButton type="submit" label="Salvar" class="ui-button-raised"
+              [disabled]="receitaForm.invalid"></button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
