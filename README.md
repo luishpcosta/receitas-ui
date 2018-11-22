@@ -12,11 +12,13 @@ Para executar o aplicativo, você precisa:
 
 ### Clone o repositório
 
-`https://github.com/luishpcosta/receitas-ui.git`
-
- `cd receitas-ui`
+`$ git clone git://github.com/luishpcosta/receitas-ui.git`
  
 ### Instale os pacotes npm descritos no package.json
+
+acesse o diretório de receitas-ui pela linha de comando e execute seguintes passos:
+
+`cd receitas-ui`
 
 `npm install`
 
